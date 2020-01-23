@@ -2,6 +2,7 @@ use strict;
 use Cwd qw(cwd);
 
 my $valid="perl makeToM.pl <affected> <controls> <output>";
+my $exec_path="~/bin";
 
 my $file_aff=shift;
 my $file_cont=shift;
@@ -43,7 +44,7 @@ foreach my $gene (sort keys %Final_data)
 }
 
 #print "Rscript --vanilla $dir/PCA.R  $ofile $ND $NH $ofile.png\n";
-system ("Rscript --vanilla PCA.R $dir/$ofile.tmp $ND $NH $ofile")==0||die($!); 
+system ("Rscript --vanilla $exec_path/PCA.R $dir/$ofile.tmp $ND $NH $ofile")==0||die($!); 
 
 sub populate
 {
