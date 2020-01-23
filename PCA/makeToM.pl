@@ -17,13 +17,9 @@ unless (-e $file_aff || -e $file_cont || -e $ofile)
 	die();
 }
 
-my $dir=cwd;
-
 open(O,">$dir/$ofile.tmp");
 my %Final_data=();
 my @ids=();
-
-
 
 my $ND=populate($file_aff);
 my $NH=populate($file_cont);
@@ -47,7 +43,7 @@ foreach my $gene (sort keys %Final_data)
 }
 
 #print "Rscript --vanilla $dir/PCA.R  $ofile $ND $NH $ofile.png\n";
-system ("Rscript --vanilla $dir/PCA.R $dir/$ofile.tmp $ND $NH $ofile")==0||die($!); 
+system ("Rscript --vanilla PCA.R $dir/$ofile.tmp $ND $NH $ofile")==0||die($!); 
 
 sub populate
 {
