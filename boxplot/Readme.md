@@ -1,5 +1,5 @@
 This is a simple script used to compare VINYL pathogenicity score on a gene by gene basis. 
-See Chiara et al 2020 (and figure 3 in particular) for an example of the output of this program.
+See Chiara et al 2020 (and figure 4b in particular) for an example of the output of this program.
 
 This is a simple R script. You can execute it using the Rscrip utility, and the following syntax:
 
