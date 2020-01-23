@@ -1,5 +1,5 @@
 #################################################################################################
-        IMPORTANT for this script to work you need to have a copy of the PCA.R R script in you ~/bin directory
+        IMPORTANT for this script to work you need to have a copy of the PCA.R R script in you ~/bin directory.
 Alternatively you can edit the makeToM.pl file, and in particular the $exec_path variable at line 5, to reflect the absolute path of PCA.R                                                                                                                
 #################################################################################################
 
