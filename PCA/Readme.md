@@ -1,7 +1,7 @@
-#########################################################################################################
+#################################################################################################
 #IMPORTANT for this script to work you need to have a copy of the PCA.R R script in you ~/bin directory                       #
 #Alternatively you can edit the makeToM.pl file, and in particular the $exec_path variable at line 5, to reflect the absolute # #path of PCA.R                                                                                                                #
-########################################################################################################
+#################################################################################################
 
 These utilities are used to perform PCA (Principal Component Analysis) of patients and controls based on the VINYL pathogenicity score. To perform the analysis you need to use the makeToM.pl script. PCA.R is an helper script that is invoked by the latter. You do not need to use it directly.
 
