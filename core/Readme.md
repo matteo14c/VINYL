@@ -5,10 +5,14 @@ IMPORTANT for these scripts to work you need to have a copy of the GENEO_VINYL.R
 This folder contains the core utilities required to run VINYL. These are the "optimizer": optimizer_genetic.pl the script that is required for the computation of the optimal VINYL score, the score_complete_alt_M.pl script, which is used to compute scores from VCF files, and the survival_M.R script which is used to derive the optimal score cut-off for identifying likely pathogenic variants. For these utilities to work (see also above) you need to have a copy of both GENEO_VINYL.R and score_complete_alt_M.pl in the bin directory of your account. Alternatively you can modify the $exec_path variable in line 5 of  optimizer_genetic.pl and line 28 and 29 of GENEO_VINYL.R, to reflect the absolute paths of these scripts.
 
 Normally, to execute a complete analysis you will need to:
+  
   1) Run the optimizer through optimizer_genetic.pl. The output file will consist in a table with the "optimal" weights for the computation of the VINYL pathogenicity score
+  
   2) Execute the score_complete_alt_M.pl with the score weights identified at the previous point (the first non-header line of the output file of the optimizer), to compute vinyl score for both the vcf of the affected individuals and the control population
+  
   3) use the survival_M.R script to derive the optimal cut-off value.
- Please feel free to refere to Chiara et al 2020 and to http://90.147.75.93/galaxy/static/manual/ for a more detailed description of the logic behind VINYL and the implementation of the algorithm.
+ 
+Please feel free to refere to Chiara et al 2020 and to http://90.147.75.93/galaxy/static/manual/ for a more detailed description of the logic behind VINYL and the implementation of the algorithm.
 A more detailed description of the parameters used, of the configuation files and of their usage, can be found again at  http://90.147.75.93/galaxy/static/manual/ or in the supplementary materials of Chiara et al, 2020.
 
 ############################################################################################################################
@@ -21,28 +25,50 @@ The name of the output file (which is in tsv format) can be specified by the -of
 
 Additional parameters can be used to specify the ranges (minimum and maximum values) for the variuos components of the vinyl scores, and the configuration files and options to be used.
 Parameters for the configuration of VINYL include: 
+  
   -disease  ->     description of the pathological condition. Multiple keywords can be separated by #
+  
   -similarD ->     name of the "sfile" (see configuration files)
+  
   -lgenes   ->     name of the "lgenes" (see configuration files)
+  
   -leQTL    ->     name of the "eqtl" (see configuration files)
+  
   -keywords ->     name of the "kfile" (see configuation files)
+  
   -effects  ->     name of the "efile" (see configuation files)
+  
   -AF       ->     allele frequency cut-off for rare variants, should reflect the prevalence of the disease
+  
   -nind     ->     cut off for the over-representation score (see Chiara et al 2020 and the online manual)
+  
   -AD       ->     is the disease autosomic dominant T/F
+  
   -XL       ->     is the disease autosomic x-linked T/F
 Parameters for the configuration of score values include:
+  
   -disease_clinvar  -> score for genetic variants implicated in the pathological condition according to clinval
+  
   -score_AF         -> score for rare variants
+  
   -score_functional -> score for variants with a predicted deleterious effect
+  
   -score_NS         -> score for ns variants with a  predicted disruptive effect
+  
   -score_nIND       -> score for over-represented variants
+  
   -scoreeQTL        -> score for variants associated with eQTLs
+  
   -scoreG           -> score for variants associated with disease related genes
+  
   -scoreT           -> score for variants associated with TFBS
+  
   -scoreM           -> score for variants at miRNA binding sites
+  
   -scoreR           -> score for variants associated with regulatory elements
+  
   -scoreSP          -> score for variants predicted to disrupt splice sites
+  
   -scoreGW          -> score for variants implicated in relevant phenotypic traits according to a GWAS study
 
 Each parameter configures the minimum and maximum values for different components of the score. Please refer to Chiara et al 2020 and to the online manual for a more extended description. Minimum and maximum values can be specified according to the following syntax: -parameter <minScore:maxScore>
@@ -55,37 +81,64 @@ Execution of the score_complete_alt_M.pl script for the calculation of pathogeni
 
 This perl script accepts the same parameter as the optimizer (see above) with the notable exception that only 1 input file is required. This needs to be a vcf file annotated by annovar, and is specified by the -ifile parameter.
 Another difference with the optimizer is that this script produces 3 files as its main output. These are
+
 1) a tabular file with VINYL scores (-ofile)
+
 2) a vcf file with VINYL scores (-ovcfile)
+
 3) a tabular file with the values of all the components of the score for every genetic variant (-o summary).
+
 If no names are specified the default values of final_res.csv, final_res.vcf and detailed_final_res.csv are used.
 
 As stated above, all the other parameters accepted by this program are the same as the parameters accepted by optimizer_genetic.pl. Since however this script performs only the scoring and not the optimization, all the parameters that specify the weights of the various components of the score, do not accept ranges but need to be specified by using  a single value. This value needs to be derived from the output of the vinyl optimizer. (see above, and online manual).
 A list of the parameters follows:
 
 Parameters for the configuration of VINYL include: 
+  
   -disease  ->     description of the pathological condition. Multiple keywords can be separated by #
+  
   -similarD ->     name of the "sfile" (see configuration files)
+  
   -lgenes   ->     name of the "lgenes" (see configuration files)
+  
   -leQTL    ->     name of the "eqtl" (see configuration files)
+  
   -keywords ->     name of the "kfile" (see configuation files)
+  
   -effects  ->     name of the "efile" (see configuation files)
+  
   -AF       ->     allele frequency cut-off for rare variants, should reflect the prevalence of the disease
+  
   -nind     ->     cut off for the over-representation score (see Chiara et al 2020 and the online manual)
+  
   -AD       ->     is the disease autosomic dominant T/F
+  
   -XL       ->     is the disease autosomic x-linked T/F
+
 Parameters for the configuration of score values include:
+  
   -disease_clinvar  -> score for genetic variants implicated in the pathological condition according to clinval
+  
   -score_AF         -> score for rare variants
+  
   -score_functional -> score for variants with a predicted deleterious effect
+  
   -score_NS         -> score for ns variants with a  predicted disruptive effect
+  
   -score_nIND       -> score for over-represented variants
+  
   -scoreeQTL        -> score for variants associated with eQTLs
+  
   -scoreG           -> score for variants associated with disease related genes
+  
   -scoreT           -> score for variants associated with TFBS
+  
   -scoreM           -> score for variants at miRNA binding sites
+  
   -scoreR           -> score for variants associated with regulatory elements
+  
   -scoreSP          -> score for variants predicted to disrupt splice sites
+  
   -scoreGW          -> score for variants implicated in relevant phenotypic traits according to a GWAS study
 
 Each parameter configures the weight for different components of the score. In this case exact values and not ranges need to be specified. Please refer to Chiara et al 2020 and to the online manual for a more extended description. 
