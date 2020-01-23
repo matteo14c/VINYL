@@ -7,7 +7,7 @@ This is a simple R script. You can execute it using the Rscrip utility, and the 
 
 where:
 
-affected: is the tabular output file of the score_complete_altM.pl program, containing vinyl scores for the population of  accected individuals
+affected: is the tabular output file of the score_complete_altM.pl program, containing vinyl scores for the population of  affected individuals
 
 controls: is the equivalent files, but for the control population
   
