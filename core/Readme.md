@@ -15,7 +15,7 @@ Normally, to execute a complete analysis you will need to:
 Please feel free to refere to Chiara et al 2020 and to http://90.147.75.93/galaxy/static/manual/ for a more detailed description of the logic behind VINYL and the implementation of the algorithm.
 A more detailed description of the parameters used, of the configuation files and of their usage, can be found again at  http://90.147.75.93/galaxy/static/manual/ or in the supplementary materials of Chiara et al, 2020.
 
-############################################################################################################################
+#################################################################################################
 Execution of the VINIL optimizer.
 
 The VINYL optimizer utility is executed by the means of the optimizer_genetic.pl Perl script. This script call directly or indirectly both the score_complete_alt_M.pl and the GENEO_VINYL.R utilities for the computation and for the optimization of the score respectively. Please make sure that this files are in your ~/bin folder, or modify the scripts accordingly (see above).
@@ -76,7 +76,7 @@ The script also perform minimum error checks.
 
 The output of the VINYL optimizer tool consists in a large table which ricapitulates all the values (weigths) used for the calculation of the score components, and (last 4 columns) a p-value for the enrichment in likely pathogenic variants in the affected individuals,the number of total variants and the number of likely pathogenic variants identified in the population of affected individuals and in the controls, respectively. The output of the optimizer is already sorted (in descending order, by p-value), so the "optimal" combination of weigth values of weights combination, is always reported at top.
 
-############################################################################################################################
+#################################################################################################
 Execution of the score_complete_alt_M.pl script for the calculation of pathogenicity scores.
 
 This perl script accepts the same parameter as the optimizer (see above) with the notable exception that only 1 input file is required. This needs to be a vcf file annotated by annovar, and is specified by the -ifile parameter.
@@ -147,7 +147,7 @@ The script also perform minimum error checks.
 
 This script need to be executed twice: one time on the VCF of the control population, and then on the vcf of the affected individuals. It is crucial to use the same parameters for both the files.
 
-###########################################################################################################################
+#################################################################################################
 Survival analysis and identification of the optimal cut-off value
 Once you have executed the optimizer_genetic.pl script, and computed VINYL scores on both the vcf files of the affected and control populations, using to the optimal score weigths as derived by the optimizer, you can use the survival_M.R utility to infer the optimal cut-off scores.
 This has a very simple syntax:
