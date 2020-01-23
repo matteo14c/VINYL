@@ -8,7 +8,7 @@ my %arguments=
 (
 "fileR"=>"",		    #file: vcf file of affected individuals
 "fileC"=>"",		    #file: vcf file of unaffected individuals
-"ofile"=>"",		    #name: name of the output files
+"ofile"=>"VINYL.ofile",		    #name: name of the output files
 "AD"=>"T",
 "XL"=>"F",		    #
 "disease_clinvar"=>[1,10],   #numeric mandadory, multiple values
