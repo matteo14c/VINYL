@@ -25,8 +25,8 @@ evalVINYL=function(x)
         oname_files2=unlist(paste(c("-ofile","-ovcfile","-osummary"),
                             paste(rep(file2,3), rep(onameprefix,3), c("ofile","ovcfile","osummary"),sep="."),sep=" ",collapse=" "))
 
-	command1=paste("perl ./score_complete_alt_M.pl -vcf",file1,config,params,oname_files1,sep=" ",collapse=" ")#,oname_files1)#,config)#,params)
-        command2=paste("perl ./score_complete_alt_M.pl -vcf",file2,config,params,oname_files2,sep=" ",collapse=" ")#,oname_files2)#,config)#,params)
+	command1=paste("perl ~/bin/score_complete_alt_M.pl -vcf",file1,config,params,oname_files1,sep=" ",collapse=" ")#,oname_files1)#,config)#,params)
+        command2=paste("perl ~/bin/score_complete_alt_M.pl -vcf",file2,config,params,oname_files2,sep=" ",collapse=" ")#,oname_files2)#,config)#,params)
 	Res1=system(command1,intern=FALSE)
 	Res2=system(command2,intern=FALSE)
 	fileR=paste(file1,onameprefix,"ofile",sep=".",collapse="")
