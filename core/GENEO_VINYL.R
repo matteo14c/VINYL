@@ -53,7 +53,7 @@ evalVINYL=function(x)
         	F=fisher.test(m,alternative="greater")
         	Fpv=F$p.value
         	Fodds=F$estimate
-		localScore=0.5*-log10(Fpv)+0.3*Fodds-0.2*posT #+0.175*posR-0.125*posT
+		localScore=0.2*-log10(Fpv)+0.6*log2(Fodds)-0.2*posT
 		if (localScore>score)
 		{
 			
