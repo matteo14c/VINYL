@@ -15,4 +15,4 @@ where:
 * controls: is the equivalent file for the control population
 * and output: is the name of the output file.
 
-The output will consist in a *png file* representing the results of the pca analysis. See the main VINYL paper and [manual](http://90.147.75.93/galaxy/static/manual/, VINYL manual) for an example. This type of analysis could be useful for a better stratification of patients based on profiles of presence/absence of potentially pathogenic variants.
+The output will consist in a *png file* representing the results of the pca analysis. See the main VINYL paper and [manual](http://90.147.75.93/galaxy/static/manual/, "VINYL manual") for an example. This type of analysis could be useful for a better stratification of patients based on profiles of presence/absence of potentially pathogenic variants.
