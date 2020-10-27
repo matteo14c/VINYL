@@ -73,6 +73,6 @@ evalVINYL=function(x)
 }
 library(genalg)
 
-G=rbga(stringMin=minsV,stringMax=maxV,popSize=25,iters=30,evalFunc=evalVINYL)
+G=rbga(stringMin=minsV,stringMax=maxV,popSize=40,iters=40,evalFunc=evalVINYL)
 #cat(summary(G),file=ofile,append=T)	
 
