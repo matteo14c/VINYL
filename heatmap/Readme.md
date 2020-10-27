@@ -1,4 +1,4 @@
-#Heatmap of VINYL score components
+# Heatmap of VINYL score components
 
 This utility is a simple application that allows a rapid comparison of different types of scores and functional annotations associated with genetic variants scored by VINYL. A heatmap representation is used to provide a detailed breakdown of the different components of the VINYL score that form the final score.
 Variants/functional annotation that have a similar profile are clustered. Providing an easy and convenient way to identify variants with similar features/annotations in you dataset. To avoid an excessively large/difficult to read output, a score cut-off threshold is used. Only variants above that score cut-off are considered
