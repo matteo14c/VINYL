@@ -26,5 +26,5 @@ Symptoms of the pathological condition under study, can be specified by the symp
 ## List of genes files
 A list of genes previously implicated in the pathological condition under study can be specified via the gene list configuration file (see DCM_genes in the present folder). The file is in simple text format, with each gene reported on a separate line. Genes are indicated by their official gene symbol.
 
-## List of tissues fo eQTL annotation
+## List of tissues of eQTL annotation
 List of tissues to be considered for the analysis/annotation of expression Quantitative Trait Loci (eQTL) can be specified through the “eQTL” configuration file. Names of tissues need match names used in the GTEx project  (GTEx Consortium, 2013). Again, this is simple text file with the name of the tissues in a separate line. See qfile for an example. 	
