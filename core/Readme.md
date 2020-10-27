@@ -1,8 +1,8 @@
 # Prerequisites
 
-###################################################################################################################
-IMPORTANT for these scripts to work you need to have a copy of the GENEO_VINYL.R R script and of the Perl script score_complete_alt_M.pl in you ~/bin directory.  Both programs are invoked "internally" by optimizer_genetic.pl, which expects to find them in the bin directory in your home. 
-####################################################################################################################
+#################################################################################################################
+IMPORTANT for these scripts to work you need to have a copy of the GENEO_VINYL.R R script and of the Perl script *score_complete_alt_M.pl* in you ~/bin directory.  Both programs are invoked "internally" by optimizer_genetic.pl, which expects to find them in the bin directory in your home. 
+##################################################################################################################
 
 This folder contains the core utilities required to run VINYL. These are the: 
 * "optimizer": optimizer_genetic.pl the script that is required for the computation of the optimal VINYL score, 
